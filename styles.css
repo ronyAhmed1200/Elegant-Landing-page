@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+}
+
+h1 {
+    text-transform: capitalize;
+}
+
+.showcase::after {
+    content: "";
+    height: 100vh;
+    background: url("./img/pexels-pixabay-261101.jpg") no-repeat center center/cover;
+    display: block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 1000ms;
+}
+
+.showcase:hover::after {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+.content {
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    left: 50%;
+    margin-top: 105px;
+    margin-left: -145px;
+    width: 350px;
+    height: 350px;
+    text-align: center;
+    transition: all 1000ms;
+}
+
+.showcase:hover .content p {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+.content .logo {
+    width: 180px;
+    height: 180px;
+}
+
+.content .title {
+    font-size: 2.2rem;
+    margin-top: 1rem;
+}
+
+.content .text {
+    margin-top: 1rem;
+}
+
+
+/* services */
+
+.services h3,
+.services p,
+.about h4,
+.about p {
+    margin-top: 1rem;
+}
+
+.container {
+    max-width: 1060px;
+    padding: 4rem 2rem;
+    margin: 0 auto;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    text-align: center;
+}
+
+
+/* about */
+
+.about {
+    background: #f4f4f4;
+    color: #333;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+}
+
+.about .left {
+    text-align: center;
+}
+
+footer {
+    background: #333;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 760px) {
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+    .grid-3 div {
+        padding: 2rem;
+        border-bottom: 1px solid #333;
+    }
+    .grid-3 .last {
+        border-bottom: 0;
+    }
+}
+
+
+/* for mobile */
+
+@media (max-width: 560px) {
+    .showcase::after {
+        height: 50vh;
+    }
+    .content {
+        top: 0;
+        margin-top: 5%;
+        width: 300px;
+    }
+    .content .logo {
+        width: 140px;
+        height: 140px;
+    }
+    .content .title {
+        font-size: 1.2rem;
+    }
+    .content .text {
+        display: none;
+    }
+    .container {
+        padding: 2rem;
+    }
+}
+
+
+/* for landscape */
+
+@media (max-height: 500px) {
+    .showcase::after {
+        height: 100vh;
+    }
+    .content .text {
+        display: block;
+    }
+}
